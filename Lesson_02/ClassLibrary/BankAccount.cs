@@ -13,27 +13,77 @@ namespace ClassLibrary
 
         public BankAccount(int _accountBalance) //конструктор заполнения поля баланса счета
         {
-            GetAccountNum();
+            NewAccountNum();
             this.accountBalance = _accountBalance;
             this.accountType = typeAccount.debit;
         }
         public BankAccount(typeAccount _typeAccount) //конструктор заролнения поля тип счета
         {
-            GetAccountNum();
+            NewAccountNum();
             this.accountBalance = 0;
             this.accountType = _typeAccount;
         }
         public BankAccount(int _accountBalance, typeAccount _typeAccount) //конструктор заполнения баланса и типа счета
         {
-            GetAccountNum();
+            NewAccountNum();
             this.accountBalance = _accountBalance;
             this.accountType = _typeAccount;
         }
+        public int AccountNum //свойство - номер счета, номер счета нельзя поменять, он присвается автоматически
+        {
+            get
+            {
+                return this.accountNum;
+            }
+        }
+        public int AccountBalance //свойство - баланс счета, можно только смотреть, считаю что правильно будет менять только через методы самого класса
+        {
+            get
+            {
+                return this.accountBalance;
+            }
+        }
+        public typeAccount AccountType //свойство - тип счета, считаю что тип счета не может меняться, он присваивается один раз
+        {
+            get
+            {
+                return this.accountType;
+            }
+        }
 
-        public void GetAccountNum()
+        public bool GetCash(int _cash) //метод - снять деньги со счета
+        {
+            try
+            {
+                if (this.accountBalance - _cash < 0) return false;
+                else
+                {
+                    this.accountBalance = this.accountBalance - _cash;
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool PutCash(int _cash) // метод - добавить деньги на счет
+        {
+            try
+            {
+                this.accountBalance = this.accountBalance + _cash;
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public void NewAccountNum() // создание нового счета
         {
             accountNum = count++;
-            //return accountNum;
         }
         public void GetInfo()
         {
@@ -45,31 +95,5 @@ namespace ClassLibrary
                               this.accountType);
             Console.WriteLine("---------------------------");
         }
-
-        // оставляю свойства толька для возможности получения информации
-        public int AccountNum //свойство - номер счета
-        {
-            get
-            {
-                return this.accountNum;
-            }
-        }
-        public int AccountBalance //свойство - баланс счета
-        {
-            get
-            {
-                return this.accountBalance;
-            }
-        }
-        public typeAccount AccountType //свойство - тип счета
-        {
-            get
-            {
-                return this.accountType;
-            }
-        }
-
-
     }
-
 }
