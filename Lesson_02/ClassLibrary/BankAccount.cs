@@ -6,6 +6,7 @@ namespace ClassLibrary
     public enum typeAccount { debit, kredit }
     public class BankAccount
     {
+        static int count = 0;
         private int accountNum;
         private int accountBalance;
         private typeAccount accountType;
@@ -15,10 +16,6 @@ namespace ClassLibrary
             get
             {
                 return this.accountNum;
-            }
-            set
-            {
-                this.accountNum = value;
             }
         }
         public int AccountBalance //свойство - баланс счета
@@ -32,7 +29,6 @@ namespace ClassLibrary
                 this.accountBalance = value;
             }
         }
-
         public typeAccount AccountType //свойство - тип счета
         {
             get
@@ -44,7 +40,11 @@ namespace ClassLibrary
                 this.accountType = value;
             }
         }
-
+        public int GetAccountNum()
+        {
+            accountNum = count++;
+            return accountNum;
+        }
 
     }
 }
