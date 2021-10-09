@@ -11,6 +11,8 @@ namespace ClassLibrary
         private int accountBalance;
         private typeAccount accountType;
 
+
+
         public int AccountNum //свойство - номер счета
         {
             get
@@ -44,6 +46,16 @@ namespace ClassLibrary
         {
             accountNum = count++;
             return accountNum;
+        }
+        public void GetInfo()
+        {
+            Console.WriteLine("Иформация по счету № {0} \n" +
+                              "Баланс счета - {1}\n" +
+                              "Тип счета    - {2}",
+                              this.AccountNum,
+                              this.AccountBalance,
+                              this.AccountType);
+            Console.WriteLine("---------------------------");
         }
 
     }
