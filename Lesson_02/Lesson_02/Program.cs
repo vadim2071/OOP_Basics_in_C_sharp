@@ -1,7 +1,9 @@
 ﻿using System;
 using ClassLibrary;
-// 2.Изменить класс счет в банке из упражнения таким образом, чтобы номер счета генерировался сам и был уникальным.
-// Для этого надо создать в классе статическую переменную и метод, который увеличивает значение этого переменной.
+//3. В классе банковский счет удалить методы заполнения полей. Вместо этих методов создать конструкторы.
+//  Переопределить конструктор по умолчанию, создать конструктор для заполнения поля баланс, конструктор для заполнения поля тип банковского счета,
+//  конструктор для заполнения баланса и типа банковского счета. Каждый конструктор должен вызывать метод, генерирующий номер счета.
+
 
 namespace Lesson_02
 {
@@ -9,30 +11,14 @@ namespace Lesson_02
     {
         static void Main(string[] args)
         {
-            BankAccount myAccaunt01 = new BankAccount();
-            myAccaunt01.GetAccountNum();
-            myAccaunt01.AccountBalance = 1000;
-            myAccaunt01.AccountType = typeAccount.debit;
+            BankAccount myAccaunt01 = new BankAccount(1000);
             myAccaunt01.GetInfo();
 
-
-            BankAccount myAccaunt02 = new BankAccount();
-            myAccaunt02.GetAccountNum();
-            myAccaunt02.AccountBalance = 2568;
-            myAccaunt02.AccountType = typeAccount.debit;
+            BankAccount myAccaunt02 = new BankAccount(typeAccount.debit);
             myAccaunt02.GetInfo();
 
-            BankAccount myAccaunt03 = new BankAccount();
-            myAccaunt03.GetAccountNum();
-            myAccaunt03.AccountBalance = 7981;
-            myAccaunt03.AccountType = typeAccount.kredit;
+            BankAccount myAccaunt03 = new BankAccount(2563, typeAccount.kredit);
             myAccaunt03.GetInfo();
-
-            BankAccount myAccaunt04 = new BankAccount();
-            myAccaunt04.GetAccountNum();
-            myAccaunt04.AccountBalance = 3289;
-            myAccaunt04.AccountType = typeAccount.debit;
-            myAccaunt04.GetInfo();
         }
     }
 }
