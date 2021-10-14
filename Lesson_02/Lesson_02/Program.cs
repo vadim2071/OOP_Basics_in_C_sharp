@@ -22,21 +22,16 @@ namespace Lesson_02
             Console.WriteLine("кладем на счет 4354");
             myAccaunt02.PutCash(4354);
             myAccaunt02.GetInfo();
-            Console.WriteLine("снимаем со счета 5000");
-            if (myAccaunt02.GetCash(5000)) Console.WriteLine("Получилось снять указанную сумму"); 
-            else Console.WriteLine("Не получилось снять указанную сумму");
-            myAccaunt02.GetInfo();
-            Console.WriteLine("снимаем со счета 4000");
-            if (myAccaunt02.GetCash(4000)) Console.WriteLine("Получилось снять указанную сумму");
-            else Console.WriteLine("Не получилось снять указанную сумму");
-            myAccaunt02.GetInfo();
 
-            BankAccount myAccaunt03 = new BankAccount(2563, typeAccount.kredit);
+            BankAccount myAccaunt03 = new BankAccount(250, typeAccount.kredit);
             myAccaunt03.GetInfo();
-            Console.WriteLine("снимаем со счета 2063");
-            if (myAccaunt03.GetCash(2063)) Console.WriteLine("Получилось снять указанную сумму");
+
+            Console.WriteLine("перевод 2354 с myAccaunt02 на myAccaunt03");
+            if (myAccaunt03.TransferCash(myAccaunt02, 2354)) Console.WriteLine("Получилось первести указанную сумму");
             else Console.WriteLine("Не получилось снять указанную сумму");
+            myAccaunt02.GetInfo();
             myAccaunt03.GetInfo();
+
         }
     }
 }

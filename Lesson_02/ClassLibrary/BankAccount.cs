@@ -6,7 +6,7 @@ namespace ClassLibrary
     public enum typeAccount { debit, kredit }
     public class BankAccount
     {
-        static int count = 0;
+        static int count = 1;
         private int accountNum;
         private int accountBalance;
         private typeAccount accountType;
@@ -48,6 +48,16 @@ namespace ClassLibrary
             get
             {
                 return this.accountType;
+            }
+        }
+        public bool TransferCash(BankAccount _fromAccount, int _cash) //Метод первода суммы денег (_cash) со счета (_fromAccount) на текущий счет
+        {
+            if (_fromAccount.accountBalance < _cash) return false;
+            else
+            {
+                _fromAccount.accountBalance = _fromAccount.accountBalance - _cash;
+                this.accountBalance = this.accountBalance + _cash;
+                return true;
             }
         }
 
