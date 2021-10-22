@@ -15,8 +15,33 @@ namespace Lesson_04
     {
         static void Main(string[] args)
         {
-            Building a = new Building();
-           
+            Building a = new Building(27, 9, 990, 3);
+            Building b = new Building(40, 10, 1120, 4);
+            Console.WriteLine(  "Новый дом: \n " +
+                                "номер дома  - {0}\n " +
+                                "высота дома - {1}\n " +
+                                "количество квартир в доме   - {2}\n " +
+                                "количество подъездов в доме -{3}",
+                                a.NumBuilding, a.Height, a.NumAppartment, a.NumEntrances);
+            Console.WriteLine("Дом № {0}: \n " +
+                                "высота этажа - {1}\n " +
+                                "количество квартир в подъезде - {2}\n " +
+                                "количество квартир на этаже -{3}",
+                                a.NumBuilding, a.GetHeightFloor(), a.GetNumAppartmPerEntr(), a.GetNumAppartmPerFloor());
+            Console.WriteLine("------------------------------------------");
+
+            Console.WriteLine("Новый дом: \n " +
+                                "номер дома  - {0}\n " +
+                                "высота дома - {1}\n " +
+                                "количество квартир в доме   - {2}\n " +
+                                "количество подъездов в доме -{3}",
+                                b.NumBuilding, b.Height, b.NumAppartment, b.NumEntrances);
+            Console.WriteLine("Дом № {0}: \n " +
+                                "высота этажа - {1}\n " +
+                                "количество квартир в подъезде - {2}\n " +
+                                "количество квартир на этаже -{3}",
+                                b.NumBuilding, b.GetHeightFloor(), b.GetNumAppartmPerEntr(), b.GetNumAppartmPerFloor());
+
         }
     }
 }
