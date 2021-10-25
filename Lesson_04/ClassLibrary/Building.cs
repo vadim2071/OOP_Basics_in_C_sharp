@@ -19,6 +19,12 @@ using System;
 
 namespace Library
 {
+    abstract class Creator
+    {
+        public abstract Building FactoryMethod();
+        
+    }
+
     public class Building
     {
         static int _num = 0;        // счетчик номеров домов
