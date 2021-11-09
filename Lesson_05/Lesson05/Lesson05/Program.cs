@@ -17,7 +17,13 @@ namespace Lesson05
     {
         static void Main(string[] args)
         {
-           
+            RationalNum Num1 = new RationalNum(1, 5);
+            RationalNum Num2 = new RationalNum(5, 8);
+            RationalNum Result;
+            Num1.Print();
+            Num2.Print();
+            Result = Num1 + Num2;
+            Result.Print();
         }
 
     }

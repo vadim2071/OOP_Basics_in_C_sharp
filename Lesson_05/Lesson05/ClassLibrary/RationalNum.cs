@@ -23,11 +23,28 @@ namespace ClassLibrary
             _denominator = denominator;
         }
 
-        public static RationalNum operator +(RationalNum rN1, RationalNum rN2)
+        public void Print()
         {
-            return new RationalNum(rN1._numerator + rN2._numerator, rN1.Denominator + rN2.Denominator);
+            Console.WriteLine("{0} / {1}", this.Numerator, this.Denominator);
         }
 
+        public static RationalNum operator +(RationalNum rNum1, RationalNum rNum2) // оператор сложения
+        {
+            //int a1 = rNum1._numerator;  // числитель 1го числа
+            int b1 = rNum1.Denominator; // знаменатель 1го числа
+            //int a2 = rNum2._numerator;  // числитель 2го числа
+            int b2 = rNum2.Denominator; // знаменатель 2го числа
+
+            //приводим к общему знаменателю и складываем
+
+            return new RationalNum((rNum1._numerator * b2) + (rNum2._numerator * b1), b2 * b1);
+        }
+
+    }
+
+    public static void PrintRationalNum(RationalNum _num1, RationalNum _num2)
+    {
+        Console.WriteLine("{0} / {1}", this.Numerator, this.Denominator);
     }
 
 }
