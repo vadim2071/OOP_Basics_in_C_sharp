@@ -1,4 +1,7 @@
 ﻿using System;
+//Создать класс рациональных чисел. В классе два поля – числитель и знаменатель.
+//Предусмотреть конструктор. Определить операторы ==, != (метод Equals()), <, >, <=, >=, +, – , ++, --.
+//Переопределить метод ToString() для вывода дроби. Определить операторы преобразования типов между типом дробь, float, int. Определить операторы *, /, %. 
 
 namespace ClassLibrary
 {
@@ -21,6 +24,12 @@ namespace ClassLibrary
             if (denominator <= 0) throw new ArgumentException("denominator"); //на 0 делить нельзя и отрицательным пусть может быть только числитель
             _numerator = numerator;
             _denominator = denominator;
+        }
+
+        public override string ToString()
+        {
+            string rnum = this._numerator + "/" + this._denominator;
+            return (rnum);
         }
 
         public void Print()
@@ -55,12 +64,10 @@ namespace ClassLibrary
             return new RationalNum(rNum1._numerator * rNum2._denominator, rNum1._denominator * rNum2._numerator);
         }
 
-        public static int operator %(RationalNum rNum1, RationalNum rNum2) // оператор остаток от деления -------------------------------------------------------
+        public static RationalNum operator %(RationalNum rNum1, RationalNum rNum2) // оператор остаток от деления
         {
-            RationalNum resultDel = new RationalNum(rNum1._numerator * rNum2._denominator, rNum1._denominator * rNum2._numerator); //делим
-            resultDel = resultDel - rNum1; //из результат деления вычитаем
-            int ostatok = (int)resultDel;
-            return ostatok;
+            RationalNum resultDel = rNum1/rNum2; //делим
+            return new RationalNum(resultDel._numerator % resultDel._denominator, resultDel._denominator);
         }
 
         public static RationalNum operator ++(RationalNum rNum) //оператор инкремент ++
@@ -124,5 +131,7 @@ namespace ClassLibrary
         {
            return (rNum._numerator / rNum._denominator);
         }
+
+
     }
 }

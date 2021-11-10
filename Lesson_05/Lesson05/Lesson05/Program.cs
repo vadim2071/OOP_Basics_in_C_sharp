@@ -1,13 +1,5 @@
 ﻿using System;
 using ClassLibrary;
-//Создать класс рациональных чисел. В классе два поля – числитель и знаменатель.
-//Предусмотреть конструктор. Определить операторы ==, != (метод Equals()), <, >, <=, >=, +, – , ++, --.
-//Переопределить метод ToString() для вывода дроби. Определить операторы преобразования типов между типом дробь, float, int. Определить операторы *, /, %. 
-
-//(*) На перегрузку операторов. Описать класс комплексных чисел.
-//Реализовать операцию сложения, умножения, вычитания, проверку на равенство двух комплексных чисел.
-//Переопределить метод ToString() для комплексного числа. Протестировать на простом примере
-
 
 
 
@@ -17,6 +9,7 @@ namespace Lesson05
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("тесты рациональных чисел");
             RationalNum Num1 = new RationalNum(1, 5);
             RationalNum Num2 = new RationalNum(5, 8);
             RationalNum Result;
@@ -49,7 +42,10 @@ namespace Lesson05
             Console.WriteLine("1/5 >= 5/8 {0} ", Num1 >= Num2);
             Console.WriteLine("1/5 <= 5/8 {0} ", Num1 <= Num2);
 
-            string rNumToString = (string)Num1;
+            string rNumToString = Num1.ToString();
+            Console.WriteLine("Преобразование  ToString - " + rNumToString);
+
+            rNumToString = (string)Num1;
             Console.WriteLine("Преобразование в String - " + rNumToString);
 
             float rNumToFloat = (float)Num1;
@@ -58,6 +54,29 @@ namespace Lesson05
             int rNumToInt = (int)Num1;
             Console.WriteLine("Преобразование в Int - " + rNumToInt);
 
+            RationalNum Num3 = new RationalNum(4, 5);
+            RationalNum Num4 = new RationalNum(1, 4);
+            Result = Num3 % Num4;
+            Console.WriteLine("Остаток от деления ");
+            Result.Print();
+
+            Console.WriteLine("тесты комплексных чисел");
+            ComplexNum cNum1 = new ComplexNum(1, -1);
+            ComplexNum cNum2 = new ComplexNum(3, 6);
+            ComplexNum ResCNum;
+            Console.WriteLine("первое число");
+            cNum1.Print();
+            Console.WriteLine("второе число");
+            cNum2.Print();
+            Console.WriteLine("сложение");
+            ResCNum = cNum1 + cNum2;
+            ResCNum.Print();
+            Console.WriteLine("вычитание");
+            ResCNum = cNum1 - cNum2;
+            ResCNum.Print();
+            Console.WriteLine("умножение");
+            ResCNum = cNum1 + cNum2;
+            ResCNum.Print();
         }
 
     }
