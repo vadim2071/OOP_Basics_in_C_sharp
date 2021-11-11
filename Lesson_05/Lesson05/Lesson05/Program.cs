@@ -63,20 +63,27 @@ namespace Lesson05
             Console.WriteLine("тесты комплексных чисел");
             ComplexNum cNum1 = new ComplexNum(1, -1);
             ComplexNum cNum2 = new ComplexNum(3, 6);
+            ComplexNum cNum3 = new ComplexNum(1, -1);
             ComplexNum ResCNum;
             Console.WriteLine("первое число");
             cNum1.Print();
             Console.WriteLine("второе число");
             cNum2.Print();
-            Console.WriteLine("сложение");
+            Console.WriteLine("третье число");
+            cNum3.Print();
+            Console.WriteLine("сложение первых двух");
             ResCNum = cNum1 + cNum2;
             ResCNum.Print();
-            Console.WriteLine("вычитание");
+            Console.WriteLine("вычитание второго из первого");
             ResCNum = cNum1 - cNum2;
             ResCNum.Print();
-            Console.WriteLine("умножение");
-            ResCNum = cNum1 + cNum2;
+            Console.WriteLine("умножение первых двух");
+            ResCNum = cNum1 * cNum2;
             ResCNum.Print();
+            Console.WriteLine("Сравнение");
+            Console.WriteLine("первое == второе {0} ", cNum1 == cNum2);
+            Console.WriteLine("первое == третье {0} ", cNum1 == cNum3);
+
         }
 
     }

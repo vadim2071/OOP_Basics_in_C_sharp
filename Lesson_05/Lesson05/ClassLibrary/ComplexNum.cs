@@ -47,13 +47,18 @@ namespace ClassLibrary
         public override string ToString()
         {
             string sign = "+";
-            if (this._Im < 0) sign = "";
             return (this._Re + sign + this._Im + "i");
+
         }
 
         public static bool operator ==(ComplexNum cNum1, ComplexNum cNum2) //оператор сравнения ==
         {
-            return ((rNum1._numerator * rNum2._denominator) == (rNum2._numerator * rNum1._denominator));
+            return ((cNum1._Re == cNum2._Re) & (cNum1._Im == cNum2._Im));
+        }
+
+        public static bool operator !=(ComplexNum cNum1, ComplexNum cNum2) //оператор сравнения ==
+        {
+            return ((cNum1._Re != cNum2._Re) || (cNum1._Im != cNum2._Im));
         }
 
         public void Print()
