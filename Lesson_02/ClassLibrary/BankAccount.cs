@@ -50,6 +50,18 @@ namespace ClassLibrary
                 return this.accountType;
             }
         }
+
+        public static bool operator ==(BankAccount BaAcc1, BankAccount BaAcc2) //оператор сравнения ==
+        {
+            //у проверяемых счетов должны быть одинаковые типы счетов, сумма на счете и номер счета, но я бы сравнивал только номер счета, думаю что этого было бы достаточно
+            return (BaAcc1.AccountType == BaAcc2.AccountType & BaAcc1.AccountBalance == BaAcc2.AccountBalance & BaAcc1.AccountNum == BaAcc2.AccountNum);
+        }
+
+        public static bool operator !=(BankAccount BaAcc1, BankAccount BaAcc2) //оператор сравнения !=
+        {
+            return (BaAcc1.AccountType != BaAcc2.AccountType || BaAcc1.AccountBalance != BaAcc2.AccountBalance || BaAcc1.AccountNum != BaAcc2.AccountNum);
+        }
+
         public bool TransferCash(BankAccount _fromAccount, int _cash) //Метод первода суммы денег (_cash) со счета (_fromAccount) на текущий счет
         {
             if (_fromAccount.accountBalance < _cash) return false;
