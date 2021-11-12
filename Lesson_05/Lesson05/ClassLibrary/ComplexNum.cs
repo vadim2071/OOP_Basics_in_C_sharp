@@ -47,6 +47,7 @@ namespace ClassLibrary
         public override string ToString()
         {
             string sign = "+";
+            if (this._Im < 0) sign = "";
             return (this._Re + sign + this._Im + "i");
 
         }
