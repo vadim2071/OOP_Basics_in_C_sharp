@@ -32,6 +32,16 @@ namespace Lesson_02
             myAccaunt02.GetInfo();
             myAccaunt03.GetInfo();
 
+            //сравнение счетов
+            BankAccount myAccaunt02_Copy = new BankAccount(1000);
+            myAccaunt02_Copy = myAccaunt02;
+            Console.WriteLine("myAccaunt02_Copy == myAccaunt02 " + (myAccaunt02_Copy == myAccaunt02));
+            Console.WriteLine("myAccaunt02 == myAccaunt03 " + (myAccaunt02 == myAccaunt03));
+            Console.WriteLine("myAccaunt02 != myAccaunt03 " + (myAccaunt02 != myAccaunt03));
+            Console.WriteLine("myAccaunt02_Copy.Equals(myAccaunt02) " + myAccaunt02_Copy.Equals(myAccaunt02));
+            Console.WriteLine("myAccaunt02.Equals(myAccaunt03) " + myAccaunt02.Equals(myAccaunt03));
+
+            Console.WriteLine("Проверка myAccaunt03.ToString() - " + myAccaunt03.ToString());
         }
     }
 }

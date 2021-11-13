@@ -3,7 +3,11 @@
 
 namespace ClassLibrary
 {
-    public enum typeAccount { debit, kredit }
+    public enum typeAccount 
+    { 
+        debit = 0, 
+        kredit = 1
+    }
     public class BankAccount
     {
         static int count = 1;
@@ -61,6 +65,22 @@ namespace ClassLibrary
         {
             return (BaAcc1.AccountType != BaAcc2.AccountType || BaAcc1.AccountBalance != BaAcc2.AccountBalance || BaAcc1.AccountNum != BaAcc2.AccountNum);
         }
+
+        public bool Equals(BankAccount obj) //Equals переопределение
+        {
+            return this == obj;
+        }
+        public override string ToString() //ToString переопределение
+        {
+            return "Счет N " + this.AccountNum + " " + this.accountType;
+        }
+
+        public override int GetHashCode() //GetHashCode переопределение
+        {
+            int hashCode = this.AccountNum + (string)this.AccountType;
+            return hashCode;
+        }
+
 
         public bool TransferCash(BankAccount _fromAccount, int _cash) //Метод первода суммы денег (_cash) со счета (_fromAccount) на текущий счет
         {
