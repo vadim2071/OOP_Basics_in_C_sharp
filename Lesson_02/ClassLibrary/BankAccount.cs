@@ -14,24 +14,28 @@ namespace ClassLibrary
         private int accountNum;
         private int accountBalance;
         private typeAccount accountType;
+        private DateTime timeCreate;
 
         public BankAccount(int _accountBalance) //конструктор заполнения поля баланса счета
         {
             NewAccountNum();
             this.accountBalance = _accountBalance;
             this.accountType = typeAccount.debit;
+            this.timeCreate = DateTime.Now;
         }
         public BankAccount(typeAccount _typeAccount) //конструктор заролнения поля тип счета
         {
             NewAccountNum();
             this.accountBalance = 0;
             this.accountType = _typeAccount;
+            this.timeCreate = DateTime.Now;
         }
         public BankAccount(int _accountBalance, typeAccount _typeAccount) //конструктор заполнения баланса и типа счета
         {
             NewAccountNum();
             this.accountBalance = _accountBalance;
             this.accountType = _typeAccount;
+            this.timeCreate = DateTime.Now;
         }
         public int AccountNum //свойство - номер счета, номер счета нельзя поменять, он присвается автоматически
         {
@@ -77,7 +81,7 @@ namespace ClassLibrary
 
         public override int GetHashCode() //GetHashCode переопределение
         {
-            int hashCode = this.AccountNum + (string)this.AccountType;
+            int hashCode = this.AccountNum * (this.AccountType == typeAccount.kredit ? 11 : 13);
             return hashCode;
         }
 
