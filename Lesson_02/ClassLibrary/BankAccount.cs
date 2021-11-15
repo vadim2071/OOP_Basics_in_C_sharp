@@ -81,7 +81,7 @@ namespace ClassLibrary
 
         public override int GetHashCode() //GetHashCode переопределение
         {
-            int hashCode = this.AccountNum * (this.AccountType == typeAccount.kredit ? 11 : 13);
+            int hashCode = this.AccountNum * (int)this.timeCreate.ToFileTime();
             return hashCode;
         }
 

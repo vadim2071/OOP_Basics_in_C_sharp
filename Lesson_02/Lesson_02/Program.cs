@@ -11,6 +11,7 @@ namespace Lesson_02
     {
         static void Main(string[] args)
         {
+
             BankAccount myAccaunt01 = new BankAccount(1000);
             myAccaunt01.GetInfo();
             Console.WriteLine("кладем на счет 234");
@@ -42,6 +43,9 @@ namespace Lesson_02
             Console.WriteLine("myAccaunt02.Equals(myAccaunt03) " + myAccaunt02.Equals(myAccaunt03));
 
             Console.WriteLine("Проверка myAccaunt03.ToString() - " + myAccaunt03.ToString());
+            Console.WriteLine("GetHashCode myAccaunt01 - " + myAccaunt01.GetHashCode());
+            Console.WriteLine("GetHashCode myAccaunt02 - " + myAccaunt02.GetHashCode());
+            Console.WriteLine("GetHashCode myAccaunt03 - " + myAccaunt03.GetHashCode());
         }
     }
 }
