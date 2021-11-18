@@ -1,5 +1,4 @@
 ﻿using System;
-
 //• (*) Создать класс Figure для работы с геометрическими фигурами.
 //В качестве полей класса задаются цвет фигуры, состояние «видимое/невидимое».
 //Реализовать операции: передвижение геометрической фигуры по горизонтали, по вертикали, изменение цвета, опрос состояния (видимый/невидимый).
@@ -9,14 +8,21 @@
 //Создать класс Rectangle (прямоугольник) как потомок точки, реализовать метод вычисления площади прямоугольника.
 //Точка, окружность, прямоугольник должны поддерживать методы передвижения по горизонтали и вертикали, изменения цвета.
 
-namespace Task_with_star
+namespace Library
 {
-    internal class Program
+    enum color { red, green, blue, white, black }
+    public class Figure
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
+        private color _color; // цвет фигуры
+        private bool _visible; // состояние видимости
 
+        public color Color { get { return this._color; } set { this._color = value; } };
+        public bool Visible { get { return this._visible; } set { this._visible = value; } };
+
+        public Figure (color Color, bool Visible)
+        {
+            _color = Color;
+            _visible = Visible;
         }
     }
 }
