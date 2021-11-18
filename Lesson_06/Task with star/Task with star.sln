@@ -4,8 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task with star", "Task with star\Task with star.csproj", "{F95AF6F5-4758-4C3F-B510-AFF48733636C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{249D8715-91C4-4D60-B409-707826DB7E0D} = {249D8715-91C4-4D60-B409-707826DB7E0D}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "Library\Library.csproj", "{249D8715-91C4-4D60-B409-707826DB7E0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library", "Library\Library.csproj", "{249D8715-91C4-4D60-B409-707826DB7E0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
