@@ -1,4 +1,5 @@
 ﻿using System;
+using Library;
 
 //• (*) Создать класс Figure для работы с геометрическими фигурами.
 //В качестве полей класса задаются цвет фигуры, состояние «видимое/невидимое».
@@ -11,10 +12,12 @@
 
 namespace Task_with_star
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
+            Point i = new Point();
+
             Console.WriteLine("Hello World!");
 
         }

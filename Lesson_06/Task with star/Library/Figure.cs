@@ -11,7 +11,7 @@
 namespace Library
 {
     public enum color { red, green, blue, white, black }
-    public class Figure
+    public abstract class Figure
     {
         //public enum color { red, green, blue, white, black }
         private color _color; // цвет фигуры

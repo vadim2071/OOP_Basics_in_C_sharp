@@ -8,8 +8,10 @@ namespace Library
 {
     public class Point : Figure
     {
-        public Point(color color, bool visible) : base(color, visible)
+        public Point(color color, bool visible, int x, int y) : base(color, visible)
         {
+            _x = x;
+            _y = y;
         }
         private int _x; // координаты x
         private int _y; // координата y
