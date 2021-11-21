@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Library
+namespace ClassLibrary
 {
     public class Point : Figure
     {
@@ -16,9 +16,9 @@ namespace Library
         private int _x; // координаты x
         private int _y; // координата y
 
-        public override void MoveHorizont(int move)
+        public override void Move(move _move, int _step)
         {
-
+            
         }
     }
 }
