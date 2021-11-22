@@ -6,4 +6,8 @@
     <RootNamespace>Task_with_star</RootNamespace>
   </PropertyGroup>
 
+	<ItemGroup>
+		<ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj" />
+	</ItemGroup>
+
 </Project>

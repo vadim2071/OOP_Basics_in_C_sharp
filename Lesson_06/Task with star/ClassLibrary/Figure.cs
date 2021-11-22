@@ -6,7 +6,6 @@ namespace ClassLibrary
     public enum move { up, down, left, right } // вид напрвлений перемещения фигуры
     public class Figure
     {
-        //public enum color { red, green, blue, white, black }
         private color _color; // цвет фигуры
         private bool _visible; // состояние видимости
 
@@ -27,7 +26,7 @@ namespace ClassLibrary
             this._color = color;
         }
         public virtual void Move(move _move, int _step) { }
-        static void PrintInfo()
+        public void PrintInfo()
         {
             Console.WriteLine("Цвет фигуры " + this._color);
             Console.WriteLine("Видимость фигуры " + this._visible);

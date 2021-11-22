@@ -18,7 +18,21 @@ namespace ClassLibrary
 
         public override void Move(move _move, int _step)
         {
-            
+            switch (_move)
+            {
+                case move.left: 
+                    _x = _x - _step;
+                    break;
+                case move.right: 
+                    _x = _x + _step;
+                    break;
+                case move.up: 
+                    _y = _y + _step;
+                    break;
+                case move.down: 
+                    _y = _y - _step;
+                    break;
+            }
         }
     }
 }

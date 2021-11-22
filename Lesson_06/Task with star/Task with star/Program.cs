@@ -16,7 +16,8 @@ namespace Task_with_star
     {
         static void Main(string[] args)
         {
-            Point i = new Point(color.Red , true, 4, 5);
+            
+            Point i = new Point(color.red , true, 4, 5);
 
             Console.WriteLine("Hello World!");
 
