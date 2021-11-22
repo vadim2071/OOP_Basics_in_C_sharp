@@ -11,6 +11,8 @@ namespace ClassLibrary
         private int _x; // координаты x
         private int _y; // координата y
         private int _radius; // радиус
+
+        public int Radius { get { return this._radius; } set { this._radius = value; } }
         public Circle(color color, bool visible, int x, int y, int radius) : base(color, visible, x, y)
         {
             _x = x;
@@ -18,7 +20,7 @@ namespace ClassLibrary
             _radius = radius;
         }
 
-        public float SquareCircle()
+        public float SquareCircle() //Метод вычисления площади круга
         {
             return (float)(3.14 * _radius * _radius);
         }

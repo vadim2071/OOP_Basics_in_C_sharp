@@ -17,16 +17,18 @@ namespace ClassLibrary
             _color = color;
             _visible = visible;
         }
-        public bool Visible()
+        public bool Visible() // метод вывода информации о видимотси фугуры
         {
             return this._visible;
         }
-        public void ChangeColorTo(color color)
+        public void ChangeColorTo(color color) // метод смены цвета фигуры
         {
             this._color = color;
         }
-        public virtual void Move(move _move, int _step) { }
-        public void PrintInfo()
+        public virtual void Move(move _move, int _step) // метод движения, будет определен позже
+        {
+        }
+        public void PrintInfo() // метод вывода цвета и видимости фигуры
         {
             Console.WriteLine("Цвет фигуры " + this._color);
             Console.WriteLine("Видимость фигуры " + this._visible);
