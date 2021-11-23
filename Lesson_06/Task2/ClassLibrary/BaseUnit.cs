@@ -10,8 +10,18 @@
 
 namespace ClassLibrary
 {
-    public class Unit
+    public class BaseUnit
     {
+        private int _armor; //Броня
+        private int _attack; //Сила атаки
+        private int _health; //здоровье
+        private int _speed; //скорость пеедвижения
+        private int _x; //положение юнита
+        private int _y;
 
+        public virtual int Attack()
+        {
+            return 0;
+        }
     }
 }
