@@ -1,13 +1,21 @@
-﻿
-
-
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    interface ICOder
+    public interface ICOder
     {
-        string Encode(string _in);
-        string Decode(string _in);
+        string Encode(string _in)
+        {
+            throw new NotImplementedException();
+        }
+        string Decode(string _in)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

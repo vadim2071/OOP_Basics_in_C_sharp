@@ -8,13 +8,25 @@ namespace ClassLibrary
 {
     public class ACoder : ICOder
     {
-        public string Encoder (string _in)
+        public static string Encoder (string _in)   //Метод шифрования строки - сдвиг на один символ
         {
-            return _in;
+            string _out = "";
+            for (int i = 0; i < _in.Length; i++)
+            {
+                _out = _out + (char)((int)_in[i] + 1);
+            } 
+
+            return _out;
         }
-        public string Decoder (string _in)
+        public static string Decoder (string _in)   //Метод дешифрования строки
         {
-            return _in;
+            string _out = "";
+            for (int i = 0; i < _in.Length; i++)
+            {
+                _out = _out + (char)((int)_in[i] - 1);
+            }
+
+            return _out;
         }
     }
 }
