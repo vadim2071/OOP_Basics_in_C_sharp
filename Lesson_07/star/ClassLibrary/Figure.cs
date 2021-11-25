@@ -4,7 +4,7 @@ namespace ClassLibrary
 {
     public enum color { red, green, blue, white, black } // варианты цветов
     public enum move { up, down, left, right } // вид напрвлений перемещения фигуры
-    public class Figure
+    public abstract class Figure
     {
         private color _color; // цвет фигуры
         private bool _visible; // состояние видимости
@@ -17,7 +17,8 @@ namespace ClassLibrary
             _color = color;
             _visible = visible;
         }
-        public bool Visible() // метод вывода информации о видимотси фугуры
+
+        public bool Visible() // метод вывода информации о видимости фугуры
         {
             return this._visible;
         }
@@ -25,9 +26,8 @@ namespace ClassLibrary
         {
             this._color = color;
         }
-        public virtual void Move(move _move, int _step) // метод движения, будет определен позже
-        {
-        }
+        public abstract void Move(move _move, int _step); // метод движения, будет определен позже
+
         public void PrintInfo() // метод вывода цвета и видимости фигуры
         {
             Console.WriteLine("Цвет фигуры " + this._color);
