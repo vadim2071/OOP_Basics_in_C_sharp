@@ -8,8 +8,7 @@ namespace ClassLibrary
 {
     public class Rectangle : Point
     {
-        private int _x; // координаты x
-        private int _y; // координата y
+
         private int _width; //длина стороны
         private int _height; //высота стороны
         public int Width { get { return this._width; } set { this._width = value; } }
@@ -17,8 +16,8 @@ namespace ClassLibrary
 
         public Rectangle(color color, bool visible, int x, int y, int width, int height) : base(color, visible, x, y)
         {
-            _x = x;
-            _y = y;
+            X = x;
+            Y = y;
             _width = width;
             _height = height;
         }
