@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    public class Knight : Infantry
+    public class Knight : BaseUnit
     {
     }
 }

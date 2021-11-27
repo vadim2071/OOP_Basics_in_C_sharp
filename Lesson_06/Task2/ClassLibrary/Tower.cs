@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    public class Tower : Wall //Сторожевая башня
+    public class Tower : BaseStructure //Сторожевая башня
     {
         private int _distanceAttack; //дистанция атаки
         private int _dictanceAllert; //дистанция обнаружения врага

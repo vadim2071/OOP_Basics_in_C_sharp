@@ -8,6 +8,6 @@ namespace ClassLibrary
 {
     internal class Archers : BaseUnit //лучник
     {
-        private int _distanceAttack; //Дистанция атаки
+        private int _distanceAttack; //Дистанция атаки луком
     }
 }
