@@ -10,19 +10,19 @@
 
 namespace ClassLibrary
 {
-    public class BaseUnit
+    public abstract class BaseUnit
     {
         private int _armor; //Броня
         private int _attack; //Сила атаки
         private int _health; //здоровье
-        private int _maxStep; //максимальный шаг пеедвижения
+        private int _maxStep; //максимальный шаг передвижения
         private int _x; //положение юнита
         private int _y;
 
         public int Armor { get { return this._armor; } set { this._armor = value; } }
-        public int Attack { get { return this._attack; } set { this._attack = value; } }
+        public int Attack { get { return this._attack; } }
         public int Health { get { return this._health; } set { this._health = value; } }
-        public int MaxStep { get { return this._maxStep; } set { this._maxStep = value; } }
+        public int MaxStep { get { return this._maxStep; } }
         public int X { get { return this._x; } set { this._x = value; } }
         public int Y { get { return this._y; } set { this._y = value; } }
         public BaseUnit(int armor, int attack, int health, int maxStep, int x, int y) 
@@ -35,7 +35,7 @@ namespace ClassLibrary
             _y = y;
         }
 
-        public virtual int Attack()
+        public virtual int Impact() //метод атака
         {
             return 0;
         }

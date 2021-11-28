@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    internal class Archers : BaseUnit //лучник
+    public class Archers : BaseUnit //лучник
     {
         private int _distanceAttack; //Дистанция атаки луком
+        public Archers (int armor, int attack, int health, int maxStep, int x, int y, int distanceAttack)
+        {
+            _
+        }
+
     }
 }
