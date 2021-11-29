@@ -9,9 +9,20 @@ namespace ClassLibrary
     public class Archers : BaseUnit //лучник
     {
         private int _distanceAttack; //Дистанция атаки луком
-        public Archers (int armor, int attack, int health, int maxStep, int x, int y, int distanceAttack)
+        public Archers(int x, int y) : base(x,y)
         {
-            _
+            _armor = 100;
+            _attack = 50;
+            _health = 80;
+            _maxStep = 3;
+            _x = x;
+            _y = y;
+            _distanceAttack = 5;
+        }
+
+        public override int Impact()
+        {
+            return 20*5;
         }
 
     }
