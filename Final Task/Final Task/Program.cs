@@ -1,4 +1,5 @@
 ﻿using System;
+using ClassLibrary;
 
 namespace Final_Task
 {
@@ -6,7 +7,7 @@ namespace Final_Task
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
         }
     }
 }

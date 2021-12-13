@@ -5,8 +5,10 @@ namespace ClassLibrary
     public abstract class FMBaseClass
     {
         private string _curentPass; //текущий маршрут до объекта класса
+        private string _name; //имя объекта
 
-        public string CurentPass { get { return _curentPass; },set { _curentPass = value; } }
+        public string CurentPass { get { return _curentPass; } set { _curentPass = value; } }
+        public string Name { get { return _name; } set { _name = value; } }
 
         public virtual void Rename(string newName)
         {

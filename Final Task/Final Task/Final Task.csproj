@@ -6,4 +6,8 @@
     <RootNamespace>Final_Task</RootNamespace>
   </PropertyGroup>
 
+	<ItemGroup>
+		<ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj" />
+	</ItemGroup>
+
 </Project>
