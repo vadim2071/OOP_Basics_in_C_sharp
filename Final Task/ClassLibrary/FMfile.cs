@@ -8,5 +8,9 @@ namespace ClassLibrary
 {
     public class FMfile : FMBaseClass
     {
+        public new void Delete()
+        {
+
+        }
     }
 }
