@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using ClassLibrary;
+using System.Collections;
 
 namespace Final_Task
 {
@@ -11,19 +12,19 @@ namespace Final_Task
             Console.OutputEncoding = Encoding.UTF8; //Для корректного вывода псевдографики
             CurentPath Curent_Path = new CurentPath(); //считали данные о текущем маршруте и количестве строк для вывода по команде dir
 
+            ArrayList DirList = new ArrayList(); // список каталогов и файлов
+         //   string[] DirList = { }; //массив каталогов, подкаталогов и файлов после команды dir
 
-            string[] DirList = { }; //массив каталогов, подкаталогов и файлов после команды dir
-
-            string NewString = ""; // строка новой команды на выполнение, введенной пользователем
+         //   string NewString = ""; // строка новой команды на выполнение, введенной пользователем
             Command NewCommand = new(CommandName.error, "", ""); // для хранения, распознанной команда и ее аргументов
 
 
-            cdDir(CurentPath); //переходим в каталог, который был сохранен в файле конфигурации во время последнего запуска программы
+         //   cdDir(Curent_Path.CurentPass); //переходим в каталог, который был сохранен в файле конфигурации во время последнего запуска программы
 
 
             while (NewCommand.Name != CommandName.quit)
             {
-                Console.WriteLine("Curent directory-> " + CurentPath); // вывод текущего каталога
+                Console.WriteLine("Curent directory-> " + Curent_Path.CurentPass); // вывод текущего каталога
 
                 NewString = Console.ReadLine(); //получение новой команды
 
