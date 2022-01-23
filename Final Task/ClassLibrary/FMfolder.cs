@@ -7,7 +7,7 @@ using System.IO;
 
 namespace ClassLibrary
 {
-    public class FMfolder : FMBaseClass, IManager
+    public class FMfolder : FMBaseClass//, IManager
     {
         public void Delete()
         {
@@ -43,14 +43,14 @@ namespace ClassLibrary
             string[] CurentFileList = { };              //для сохранения полученного списка файлов в текущем каталоге
             string[] Level2DirList = { };               //для хранения списка подкаталогов
             int length;
-            int newPage = Page;                         // для ввода нового размера страницы вывдо списка каталогов
+            //int newPage = Page;                         // для ввода нового размера страницы вывдо списка каталогов
 
 
             if (PathName.Length == 2)                    //Проверка команды на просмотр/изменение размера выводимой страницы
             {
                 if (PathName == "-p")                   //если только -p то выводим размер пейджинга
                 {
-                    Console.WriteLine("Текущий размер страницы вывода - {0}", Page);
+                    //Console.WriteLine("Текущий размер страницы вывода - {0}", Page);
                     return;
                 }
             }
@@ -61,14 +61,14 @@ namespace ClassLibrary
                 {
                     try
                     {
-                        newPage = Convert.ToInt32(PathName.Substring(2, PathName.Length - 2));
+                        //newPage = Convert.ToInt32(PathName.Substring(2, PathName.Length - 2));
                     }
                     catch
                     {
                         Console.WriteLine("Ошибка! Неверно введна команда");
                         return;
                     }
-                    Page = newPage;
+                    //Page = newPage;
                     return;
                 }
             }
