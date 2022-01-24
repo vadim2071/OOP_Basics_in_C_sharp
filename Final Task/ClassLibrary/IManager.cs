@@ -8,14 +8,14 @@ namespace ClassLibrary
 {
     internal interface IManager
     {
-        public void Rename(string newName);
-        public void Delete();
-        public void MakeNew(string newName);
-        public void Copy(string newName);
-        public void Move(string newName);
-        public float GetSize();
-        public void Search(string search);
-        public void ChangeAttribute(string attribite, string newAttribute);
+        abstract public void Rename(string newName);
+        abstract public void Delete();
+        abstract public void MakeNew(string newName);
+        abstract public void Copy(string newName);
+        abstract public void Move(string newName);
+        abstract public float GetSize();
+        abstract public void Search(string search);
+    //public void ChangeAttribute(string attribite, string newAttribute);
 
     }
 }

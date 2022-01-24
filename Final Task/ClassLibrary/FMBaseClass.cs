@@ -3,7 +3,7 @@ using System.IO;
 
 namespace ClassLibrary
 {
-    public abstract class FMBaseClass
+    public abstract class FMBaseClass : IManager
     {
         private string _curentPass; //текущий маршрут до объекта класса
         private string _name; //имя объекта
@@ -11,11 +11,24 @@ namespace ClassLibrary
         public string CurentPass { get { return _curentPass; } set { _curentPass = value; } }
         public string Name { get { return _name; } set { _name = value; } }
 
-        public void Rename(string newName)
-        {
+        public string Parent;
 
-        }
-        public void Delete(string DelElement)
+        abstract public void Rename(string newName);
+
+        abstract public void Delete();
+
+        abstract public void MakeNew(string newName);
+
+        abstract public void Copy(string newName);
+
+        abstract public void Move(string newName);
+
+        abstract public float GetSize();
+
+        abstract public void Search(string search);
+
+
+        /*public void Delete(string DelElement)
         {
             //если второй символ не ':' (используется в обозначени диска),
             //предполагаем что DelElement содержит имя удаляемого элемента в текущем каталоге
@@ -138,18 +151,7 @@ namespace ClassLibrary
             }
             else Console.WriteLine("Ошибка! Неверно указан источник копирования");
         }
-        public void Move(string newName)
-        {
 
-        }
-        public float GetSize()
-        {
-            return 0;
-        }
-        public void Search(string search)
-        {
-
-        }
         public void ChangeAttribute(string attribite, string newAttribute)
         {
 
@@ -184,6 +186,6 @@ namespace ClassLibrary
                 Console.WriteLine("Что-то пошло не так" + ex);
                 return;
             }
-        }
+        }*/
     }
 }
