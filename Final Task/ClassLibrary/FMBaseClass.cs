@@ -5,13 +5,20 @@ namespace ClassLibrary
 {
     public abstract class FMBaseClass : IManager
     {
-        private string _curentPass; //текущий маршрут до объекта класса
-        private string _name; //имя объекта
+        public string Path { get; }
+        public string Name { get; }
+        public string Parent { get; }
 
-        public string CurentPass { get { return _curentPass; } set { _curentPass = value; } }
-        public string Name { get { return _name; } set { _name = value; } }
 
-        public string Parent;
+
+
+        //private string _curentPass; //текущий маршрут до объекта класса
+        //private string _name; //имя объекта
+
+        ///public string CurentPass { get { return _curentPass; } set { _curentPass = value; } }
+        //public string Name { get { return _name; } set { _name = value; } }
+
+        
 
         abstract public void Rename(string newName);
 
@@ -19,9 +26,9 @@ namespace ClassLibrary
 
         abstract public void MakeNew(string newName);
 
-        abstract public void Copy(string newName);
+        abstract public void Copy(FMBaseClass newName);
 
-        abstract public void Move(string newName);
+        abstract public void Move(FMBaseClass newName);
 
         abstract public float GetSize();
 
