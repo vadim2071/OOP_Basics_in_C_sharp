@@ -16,7 +16,7 @@ namespace Final_Task
             ArrayList DirList = new ArrayList(); // список каталогов и файлов
          //   string[] DirList = { }; //массив каталогов, подкаталогов и файлов после команды dir
 
-         //   string NewString = ""; // строка новой команды на выполнение, введенной пользователем
+            string NewString = ""; // строка новой команды на выполнение, введенной пользователем
             Command NewCommand = new(CommandName.error, "", ""); // для хранения, распознанной команда и ее аргументов
 
 
@@ -78,6 +78,7 @@ namespace Final_Task
             {
 
                 List<FMBaseClass> CurentDirList = new List<FMBaseClass>();
+
                 //string[] CurentDirList = { };               //для сохранения полученного списка каталогов
                 string[] CurentFileList = { };              //для сохранения полученного списка файлов в текущем каталоге
                 string[] Level2DirList = { };               //для хранения списка подкаталогов
