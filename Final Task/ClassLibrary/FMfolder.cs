@@ -9,7 +9,15 @@ namespace ClassLibrary
 {
     public class FMfolder : FMBaseClass
     {
-        
+        public FMfolder()
+        {
+            
+            Path = Directory.GetCurrentDirectory();
+            //Name = Directory.get
+            Parent = Directory.GetParent();
+        }
+
+
         public void Delete()
         {
 

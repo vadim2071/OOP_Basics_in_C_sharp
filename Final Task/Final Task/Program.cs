@@ -25,20 +25,22 @@ namespace Final_Task
 
             while (NewCommand.Name != CommandName.quit)
             {
-                Console.WriteLine("Curent directory-> " + Curent_Path.CurentPass); // вывод текущего каталога
+                Console.WriteLine("Curent directory-> " + Curent_Path.CurentPass); // вывод текущего каталога //старая версия
+
+                FMfolder fMfolder = new FMfolder();
 
                 NewString = Console.ReadLine(); //получение новой команды
 
                 //подготовка к выводу результата введенной команды
                 Console.Clear();                // очистка консоли
-                Console.WriteLine(CurentPath);  // выводим имя текущего каталога
+                Console.WriteLine(Curent_Path);  // выводим имя текущего каталога
                 Console.WriteLine(NewString);   // выводим введенную ранее команду
                 NewCommand = ParseCommand(NewString); // разбираем введенную строку команды
 
                 switch (NewCommand.Name)
                 {
                     case CommandName.dir:
-                        if (NewCommand.Arg1 == "") NewCommand.Arg1 = CurentPath; //если аргумента нет то выводим список каталогов в текущем каталоге
+                        if (NewCommand.Arg1 == "") NewCommand.Arg1 = Curent_Path; //если аргумента нет то выводим список каталогов в текущем каталоге
                         Array.Resize(ref DirList, 0);       // очищаем массив от предыдущих результатов
                         Dir(NewCommand.Arg1, ref DirList);  // в массив DirList записываем зодержимое каталога
                         DirPrint(ref DirList, Page);        // выводим в консоль из массива DirList список каталогов постранично
@@ -64,8 +66,8 @@ namespace Final_Task
                         break;
                     case CommandName.quit:
                         //сохраняем все изменения в файл конфигурации
-                        config.AppSettings.Settings["Path"].Value = CurentPath;
-                        config.AppSettings.Settings["Page"].Value = Convert.ToString(Page);
+                        config.AppSettings.Settings["Path"].Value = Curent_Path;
+                        //config.AppSettings.Settings["Page"].Value = Convert.ToString(Page);
                         config.Save(ConfigurationSaveMode.Modified);
                         break;
                     case CommandName.error:
