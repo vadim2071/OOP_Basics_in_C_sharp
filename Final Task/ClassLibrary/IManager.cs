@@ -11,8 +11,8 @@ namespace ClassLibrary
         abstract public void Rename(string newName);
         abstract public void Delete();
         abstract public void MakeNew(string newName);
-        abstract public void Copy(string newName);
-        abstract public void Move(string newName);
+        abstract public void Copy(FMBaseClass newName);
+        abstract public void Move(FMBaseClass newName);
         abstract public float GetSize();
         abstract public void Search(string search);
     //public void ChangeAttribute(string attribite, string newAttribute);

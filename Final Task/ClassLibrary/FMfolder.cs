@@ -18,33 +18,41 @@ namespace ClassLibrary
         }
 
 
-        public void Delete()
+        override public void Rename(string newName)
         {
 
         }
 
-        // метод смены каталога        
-        static void cdDir(string PathName)
+        override public void Delete()
         {
-            try
-            {
-                if (PathName.Substring(PathName.Length - 1) != @"\") PathName += @"\";  // в строке содержащей путь последний символ должен быть \
-                Directory.SetCurrentDirectory(PathName);
-            }
-            catch (FileNotFoundException)
-            {
-                Console.WriteLine("Ошибка! путь не найден");
-            }
-            catch (DirectoryNotFoundException)
-            {
-                Console.WriteLine("Ошибка! каталог не найден");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Что-то пошло не так" + ex);
-            }
+
         }
 
-        
+        override public void MakeNew(string newName)
+        {
+
+        }
+
+        override public void Copy(FMBaseClass newName)
+        {
+
+        }
+
+        override public void Move(FMBaseClass newName)
+        {
+
+        }
+
+        override public float GetSize()
+        {
+            return 0;
+        }
+
+        override public void Search(string search)
+        {
+
+        }
+
+
     }
 }
