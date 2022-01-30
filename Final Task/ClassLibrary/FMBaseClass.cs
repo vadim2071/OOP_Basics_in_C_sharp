@@ -5,9 +5,9 @@ namespace ClassLibrary
 {
     public abstract class FMBaseClass : IManager
     {
-        public string Path { get; set; }
-        public string Name { get; set; }
-        public DirectoryInfo Parent { get; set; }
+        public string FullPath { get; set; }
+        public string NameElement { get; set; }
+        public DirectoryInfo ParentElement { get; set; }
 
 
         abstract public void Rename(string newName);

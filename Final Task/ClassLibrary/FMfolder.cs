@@ -12,11 +12,25 @@ namespace ClassLibrary
         public FMfolder()
         {
             
-            Path = Directory.GetCurrentDirectory();
-            //Name = Directory.get
-            Parent = Directory.GetParent();
+            FullPath = Directory.GetCurrentDirectory();
+            NameElement = Path.GetFileName(FullPath);
+            ParentElement = Directory.GetParent(FullPath);
         }
 
+        public void Dir()
+        {
+            //список хранения списка текущего каталога
+            string[] catalog = Directory.GetDirectories(this.FullPath);
+            string[] files = Directory.GetFiles(this.FullPath);
+            foreach (string file in files)
+            {
+                catalog.Append(file);
+            }
+
+
+
+
+        }
 
         override public void Rename(string newName)
         {
