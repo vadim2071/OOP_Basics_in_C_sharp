@@ -47,5 +47,9 @@ namespace ClassLibrary
             config.AppSettings.Settings["Page"].Value = Convert.ToString(_page);
             config.Save(ConfigurationSaveMode.Modified);
         }
+        public void Update()
+        {
+            _curent_path = Directory.GetCurrentDirectory(); // текущий каталог
+        }
     }
 }

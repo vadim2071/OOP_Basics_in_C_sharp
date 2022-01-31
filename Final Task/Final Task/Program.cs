@@ -29,10 +29,11 @@ namespace Final_Task
                 switch (command.Name)
                 {
                     case CommandName.dir:
-                        curentFolder.Dir();
+                        curentFolder.Dir(curentPath.Page);
                         break;
                     case CommandName.cd:
-
+                        curentFolder.CDir(command.ArgFirst);
+                        curentPath.Update();
                         break;
                     case CommandName.copy:
 
