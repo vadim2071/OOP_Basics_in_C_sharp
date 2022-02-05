@@ -29,17 +29,20 @@ namespace Final_Task
                 switch (command.Name)
                 {
                     case CommandName.dir:
+                        //
                         curentFolder.Dir(curentPath.Page);
-                        curentFolder.FullPath = curentPath.CurentPass;
                         break;
                     case CommandName.cd:
+                        //
                         curentFolder.CDir(command.ArgFirst);
                         curentPath.Update(curentFolder);
                         break;
                     case CommandName.copy:
-
+                        FMfolder copyFolder = new FMfolder(curentFolder + "\\" + command.ArgFirst);
+                        curentFolder.Copy(copyFolder);
                         break;
                     case CommandName.del:
+                        //
                         curentFolder.Delete(command.ArgFirst);
 
                         break;

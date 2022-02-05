@@ -16,6 +16,12 @@ namespace ClassLibrary
             NameElement = Path.GetFileName(FullPath);
             ParentElement = Directory.GetParent(FullPath);
         }
+        public FMfolder(string fullPath)
+        {
+            FullPath = fullPath;
+            NameElement = Path.GetFileName(FullPath);
+            ParentElement = Directory.GetParent(FullPath);
+        }
 
         public void Dir(int page)
         {
@@ -72,7 +78,8 @@ namespace ClassLibrary
         {
             try
             {
-                Directory.Delete(this.FullPath + delName, true);
+                if (Directory.Exists(this.FullPath + "\\" + delName)) Directory.Delete(this.FullPath + "\\" + delName, true);
+                else if (File.Exists(this.FullPath + "\\" + delName)) File.Delete(this.FullPath + "\\" + delName);
                 return;
             }
             catch (UnauthorizedAccessException)
@@ -122,9 +129,34 @@ namespace ClassLibrary
             }
         }
 
-        override public void Copy(FMBaseClass newName)
+        override public void Copy(FMBaseClass copyFolder)
         {
+            DirectoryInfo DirPathSource = new DirectoryInfo(copyFolder.ParentElement);
+            DirectoryInfo DirPathDestination = new DirectoryInfo(PathTo);
+            DirectoryInfo[] DirList = DirPathSource.GetDirectories();       //получаем список каталогов в копируемом каталоге
+            FileInfo[] FileList = DirPathSource.GetFiles();                 // получаем список файлов в копируемом каталоге
 
+            try
+            {
+                Directory.CreateDirectory(PathTo);          // создание целевого каталога
+                foreach (FileInfo file in FileList) file.CopyTo(Path.Combine(DirPathDestination.FullName, file.Name));              //копируем все файлы
+                foreach (DirectoryInfo Dir in DirList) DirCopy(Dir.FullName, Path.Combine(DirPathDestination.FullName, Dir.Name));  //создаем все существующией каталоги в целевом каталоге
+            }
+            catch (IOException)
+            {
+                Console.WriteLine("Ошибка! каталог в который копируется является файлом или недопустимый путь");
+                return;
+            }
+            catch (UnauthorizedAccessException)
+            {
+                Console.WriteLine("Ошибка! У вас нет прав для копирования");
+                return;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Что-то пошло не так" + ex);
+                return;
+            }
         }
 
         override public void Move(FMBaseClass newName)

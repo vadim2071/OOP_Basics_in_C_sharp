@@ -51,6 +51,8 @@ namespace ClassLibrary
         {
             _curent_path = Directory.GetCurrentDirectory(); // текущий каталог
             path.FullPath = _curent_path;
+            path.NameElement = Path.GetFileName(_curent_path);
+            path.ParentElement = Directory.GetParent(_curent_path);
         }
     }
 }
