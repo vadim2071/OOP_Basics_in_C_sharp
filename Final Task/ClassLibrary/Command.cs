@@ -19,7 +19,8 @@ namespace ClassLibrary
         error,      // для случая, когда введена не существующая команда
         cd,         // смена каталога
         text_info,  // информация по текстовому файлу
-        chn_atr     // изменение атрибутов
+        chn_atr,    // изменение атрибутов
+        rename      // переименование
     };
     public class Command
     {
@@ -94,6 +95,10 @@ namespace ClassLibrary
 
                 case "change":
                     NewCommand._name = CommandName.chn_atr;
+                    break;
+
+                case "rename":
+                    NewCommand._name = CommandName.rename;
                     break;
 
                 default:

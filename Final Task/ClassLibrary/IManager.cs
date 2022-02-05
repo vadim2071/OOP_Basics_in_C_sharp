@@ -9,7 +9,7 @@ namespace ClassLibrary
     internal interface IManager
     {
         abstract public void Rename(string newName);
-        abstract public void Delete();
+        abstract public void Delete(string delName);
         abstract public void MakeNew(string newName);
         abstract public void Copy(FMBaseClass newName);
         abstract public void Move(FMBaseClass newName);

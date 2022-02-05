@@ -47,9 +47,10 @@ namespace ClassLibrary
             config.AppSettings.Settings["Page"].Value = Convert.ToString(_page);
             config.Save(ConfigurationSaveMode.Modified);
         }
-        public void Update()
+        public void Update(FMfolder path)
         {
             _curent_path = Directory.GetCurrentDirectory(); // текущий каталог
+            path.FullPath = _curent_path;
         }
     }
 }

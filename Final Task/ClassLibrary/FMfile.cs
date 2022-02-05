@@ -22,7 +22,7 @@ namespace ClassLibrary
 
         }
 
-        override public void Delete()
+        override public void Delete(string delName)
         {
 
         }

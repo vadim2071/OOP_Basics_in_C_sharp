@@ -12,7 +12,7 @@ namespace ClassLibrary
 
         abstract public void Rename(string newName);
 
-        abstract public void Delete();
+        abstract public void Delete(string delName);
 
         abstract public void MakeNew(string newName);
 

@@ -32,8 +32,14 @@ namespace ClassLibrary
                     Console.WriteLine(Path.GetFileName(catalog[i]));
                     i++;
                 }
-                if(i< catalog.Length) Console.ReadLine();
+
+                if (i < catalog.Length)
+                {
+                    Console.WriteLine("->For next page press ENTER");
+                    Console.ReadLine();
+                }
             }
+            Console.WriteLine("->This page last");
         }
 
         public void CDir(string newPath)
@@ -62,9 +68,33 @@ namespace ClassLibrary
 
         }
 
-        override public void Delete()
+        override public void Delete(string delName)
         {
-
+            try
+            {
+                Directory.Delete(this.FullPath + delName, true);
+                return;
+            }
+            catch (UnauthorizedAccessException)
+            {
+                Console.WriteLine("Ошибка! У вас нет прав на удаление этого объекта");
+            }
+            catch (IOException)
+            {
+                Console.WriteLine("Ошибка! В каталоге файл используется другим процессом или каталог не найден \nили каталог доступен только для чтения или содержит файл только для чтения");
+            }
+            catch (ArgumentException)
+            {
+                Console.WriteLine("Ошибка в аргументе");
+            }
+            catch (NotSupportedException)
+            {
+                Console.WriteLine("параметр задан в недопустимом формате");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ошибка! Что-то пошло не так: " + ex);
+            }
         }
 
         override public void MakeNew(string newDir)

@@ -30,15 +30,17 @@ namespace Final_Task
                 {
                     case CommandName.dir:
                         curentFolder.Dir(curentPath.Page);
+                        curentFolder.FullPath = curentPath.CurentPass;
                         break;
                     case CommandName.cd:
                         curentFolder.CDir(command.ArgFirst);
-                        curentPath.Update();
+                        curentPath.Update(curentFolder);
                         break;
                     case CommandName.copy:
 
                         break;
                     case CommandName.del:
+                        curentFolder.Delete(command.ArgFirst);
 
                         break;
                     case CommandName.file:
@@ -53,6 +55,10 @@ namespace Final_Task
                     case CommandName.quit:
                         //сохраняем все изменения в файл конфигурации
                         curentPath.Save();
+                        break;
+
+                    case CommandName.rename:
+
                         break;
                     case CommandName.error:
                         Console.WriteLine("ошибка, неправильная команда");
