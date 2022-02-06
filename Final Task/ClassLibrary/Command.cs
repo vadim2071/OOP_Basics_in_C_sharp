@@ -30,7 +30,7 @@ namespace ClassLibrary
 
         public CommandName Name { get { return _name; } }
         public string ArgFirst { get { return _argFirst; } }
-        public string ArgumentSecond { get { return _argSecond; } }
+        public string ArgSecond { get { return _argSecond; } }
 
         public Command(CommandName name, string argFirst, string argSecond)
         {

@@ -129,18 +129,23 @@ namespace ClassLibrary
             }
         }
 
-        override public void Copy(FMBaseClass copyFolder)
+        override public void Copy(FMBaseClass copyToFolder)
         {
-            DirectoryInfo DirPathSource = new DirectoryInfo(copyFolder.ParentElement);
-            DirectoryInfo DirPathDestination = new DirectoryInfo(PathTo);
+            DirectoryInfo DirPathSource = new DirectoryInfo(this.FullPath);
+            DirectoryInfo DirPathDestination = new DirectoryInfo(copyToFolder.FullPath);
             DirectoryInfo[] DirList = DirPathSource.GetDirectories();       //получаем список каталогов в копируемом каталоге
             FileInfo[] FileList = DirPathSource.GetFiles();                 // получаем список файлов в копируемом каталоге
 
             try
             {
-                Directory.CreateDirectory(PathTo);          // создание целевого каталога
+                Directory.CreateDirectory(copyToFolder.FullPath);          // создание целевого каталога
                 foreach (FileInfo file in FileList) file.CopyTo(Path.Combine(DirPathDestination.FullName, file.Name));              //копируем все файлы
-                foreach (DirectoryInfo Dir in DirList) DirCopy(Dir.FullName, Path.Combine(DirPathDestination.FullName, Dir.Name));  //создаем все существующией каталоги в целевом каталоге
+                foreach (DirectoryInfo Dir in DirList)
+                {
+                    FMfolder newDir = new FMfolder(Dir.FullName);
+                    newDir.Copy(copyToFolder);
+                    Copy(Dir.FullName, Path.Combine(DirPathDestination.FullName, Dir.Name));  //создаем все существующией каталоги в целевом каталоге
+                }
             }
             catch (IOException)
             {

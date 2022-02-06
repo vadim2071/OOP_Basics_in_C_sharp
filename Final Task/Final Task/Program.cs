@@ -39,7 +39,8 @@ namespace Final_Task
                         break;
                     case CommandName.copy:
                         FMfolder copyFolder = new FMfolder(curentFolder + "\\" + command.ArgFirst);
-                        curentFolder.Copy(copyFolder);
+                        FMfolder copyToFolder = new FMfolder(command.ArgSecond);
+                        copyFolder.Copy(copyToFolder);
                         break;
                     case CommandName.del:
                         //
